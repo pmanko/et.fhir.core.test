@@ -12,13 +12,11 @@ permissions:
   contents: write
 
 env:
-  # et.fhir.core is not yet on a package registry. Pre-seed its dev package into
-  # the IG Publisher's package cache so this build can resolve the dependency.
-  # Update this URL when et.fhir.core publishes (e.g. https://fhir.et/core/package.tgz),
-  # then you can drop the pre-seed step and depend on a real version.
-  ET_CORE_PKG_URL: https://pmanko.github.io/ETBase-1/package.tgz
+  # et.fhir.core isn't on a package registry, so pre-seed its published dev build
+  # into the IG Publisher's package cache so this build resolves the dependency.
+  ET_CORE_PKG_URL: https://moh-ethiopia.github.io/ETBase/package.tgz
   ET_CORE_ID: et.fhir.core
-  ET_CORE_VERSION: dev
+  ET_CORE_VERSION: "0.9.0"
 
 jobs:
   build:

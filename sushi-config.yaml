@@ -15,13 +15,14 @@ publisher:
   name: MOH Ethiopia
   url: http://moh.gov.et
 
-# Pairs with the Ethiopia base IG (et.fhir.core). `dev` resolves from the local
-# FHIR package cache (~/.fhir/packages/et.fhir.core#dev) for local builds; CI
-# pre-seeds that same cache entry from et.fhir.core's dev package (see
-# .github/workflows/build.yml). Switch to a real version once et.fhir.core is
-# published at fhir.et/core.
+# Pairs with the Ethiopia base IG (et.fhir.core). Pinned to the published dev
+# build (v0.9.0) on GitHub Pages. CI pre-seeds this exact version into the
+# package cache from that dev build (see .github/workflows/build.yml); for local
+# builds, seed it once with:
+#   curl -fsSL https://moh-ethiopia.github.io/ETBase/package.tgz | \
+#     tar -xz -C "$(mkdir -p ~/.fhir/packages/et.fhir.core#0.9.0 && echo $_)"
 dependencies:
-  et.fhir.core: dev
+  et.fhir.core: 0.9.0
 
 pages:
   index.md:
