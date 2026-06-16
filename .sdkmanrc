@@ -1,0 +1,3 @@
+# Pin the JDK for IG Publisher / SUSHI builds (run: sdk env). The IG Publisher
+# requires Java 17+; this is the version verified to build this IG.
+java=21.0.5-tem

@@ -27,3 +27,8 @@ dependencies:
 pages:
   index.md:
     title: Overview
+
+# fhir.base.template includes menu.xml; SUSHI generates it from this block.
+menu:
+  Home: index.html
+  Artifacts: artifacts.html
