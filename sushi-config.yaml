@@ -1,0 +1,28 @@
+id: et.fhir.core.test
+canonical: http://fhir.et/core/test
+name: ETCoreTest
+title: "Ethiopia Core IG Conformance Test Fixtures"
+description: "Curated test instances (valid + intentionally invalid) for validating against the Ethiopia Base IG (et.fhir.core). These fixtures are the data consumed by the hapi-sandbox conformance harness — the harness itself carries no data."
+status: draft
+experimental: true
+version: 0.1.0
+fhirVersion: 4.0.1
+copyrightYear: 2026+
+releaseLabel: ci-build
+license: CC-BY-SA-4.0
+jurisdiction: "urn:iso:std:iso:3166#ET"
+publisher:
+  name: MOH Ethiopia
+  url: http://moh.gov.et
+
+# Pairs with the Ethiopia base IG (et.fhir.core). `dev` resolves from the local
+# FHIR package cache (~/.fhir/packages/et.fhir.core#dev) for local builds; CI
+# pre-seeds that same cache entry from et.fhir.core's dev package (see
+# .github/workflows/build.yml). Switch to a real version once et.fhir.core is
+# published at fhir.et/core.
+dependencies:
+  et.fhir.core: dev
+
+pages:
+  index.md:
+    title: Overview

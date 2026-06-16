@@ -1,0 +1,65 @@
+name: Build IG and publish to GitHub Pages
+
+on:
+  push:
+    branches-ignore: [gh-pages]
+  pull_request:
+  workflow_dispatch:
+
+# Community FHIR-IG pattern: deploy by pushing the built site to the gh-pages
+# branch (no pages:/id-token: OIDC needed).
+permissions:
+  contents: write
+
+env:
+  # et.fhir.core is not yet on a package registry. Pre-seed its dev package into
+  # the IG Publisher's package cache so this build can resolve the dependency.
+  # Update this URL when et.fhir.core publishes (e.g. https://fhir.et/core/package.tgz),
+  # then you can drop the pre-seed step and depend on a real version.
+  ET_CORE_PKG_URL: https://pmanko.github.io/ETBase-1/package.tgz
+  ET_CORE_ID: et.fhir.core
+  ET_CORE_VERSION: dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pre-seed unpublished et.fhir.core into the package cache
+        run: |
+          set -euo pipefail
+          dest="fhir-package-cache/${ET_CORE_ID}#${ET_CORE_VERSION}"
+          mkdir -p "$dest"
+          echo "Fetching $ET_CORE_PKG_URL"
+          curl -fsSL "$ET_CORE_PKG_URL" -o /tmp/et-core.tgz
+          tar -xzf /tmp/et-core.tgz -C "$dest"
+          test -f "$dest/package/package.json"
+          echo "Seeded ${ET_CORE_ID}#${ET_CORE_VERSION}"
+
+      - name: Build IG (IG Publisher auto-runs SUSHI)
+        uses: docker://hl7fhir/ig-publisher-base:latest
+        with:
+          args: >-
+            bash -c "curl -sSL https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar &&
+            java -Xmx4g -jar publisher.jar publisher -ig . -package-cache-folder ./fhir-package-cache"
+
+      - name: Upload build output as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ig-output
+          path: |
+            output/qa.html
+            output/package.tgz
+          if-no-files-found: warn
+
+      # Publishes the site (and a referenceable package.tgz) to
+      # https://<owner>.github.io/<repo>/ . Enable Pages -> branch gh-pages once.
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: ./output
+          single-commit: true

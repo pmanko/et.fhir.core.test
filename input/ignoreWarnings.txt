@@ -1,0 +1,5 @@
+# IG Publisher QA suppressions.
+# ExamplePatientBad is intentionally non-conformant (it is a negative test
+# fixture), so validation errors/warnings against it are expected and not a
+# problem with this IG.
+== Suppressed Messages ==

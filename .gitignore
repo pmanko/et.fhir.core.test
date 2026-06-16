@@ -1,0 +1,9 @@
+# IG Publisher / SUSHI build artifacts (regenerated)
+fsh-generated/
+output/
+temp/
+template/
+input-cache/
+fhir-package-cache/
+*.tgz
+.DS_Store
