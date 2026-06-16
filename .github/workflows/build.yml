@@ -11,36 +11,18 @@ on:
 permissions:
   contents: write
 
-env:
-  # et.fhir.core isn't on a package registry, so pre-seed its published dev build
-  # into the IG Publisher's package cache so this build resolves the dependency.
-  ET_CORE_PKG_URL: https://moh-ethiopia.github.io/ETBase/package.tgz
-  ET_CORE_ID: et.fhir.core
-  ET_CORE_VERSION: "0.9.0"
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Pre-seed unpublished et.fhir.core into the package cache
-        run: |
-          set -euo pipefail
-          dest="fhir-package-cache/${ET_CORE_ID}#${ET_CORE_VERSION}"
-          mkdir -p "$dest"
-          echo "Fetching $ET_CORE_PKG_URL"
-          curl -fsSL "$ET_CORE_PKG_URL" -o /tmp/et-core.tgz
-          tar -xzf /tmp/et-core.tgz -C "$dest"
-          test -f "$dest/package/package.json"
-          echo "Seeded ${ET_CORE_ID}#${ET_CORE_VERSION}"
-
-      - name: Build IG (IG Publisher auto-runs SUSHI)
+      # Seeds the unpublished et.fhir.core dep into the container's package cache
+      # (where SUSHI looks), then runs the IG Publisher. See _ci-build.sh.
+      - name: Build IG
         uses: docker://hl7fhir/ig-publisher-base:latest
         with:
-          args: >-
-            bash -c "curl -sSL https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar &&
-            java -Xmx4g -jar publisher.jar publisher -ig . -package-cache-folder ./fhir-package-cache"
+          args: bash _ci-build.sh
 
       - name: Upload build output as an artifact
         if: always()
