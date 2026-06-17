@@ -23,6 +23,9 @@ publisher:
 #     tar -xz -C "$(mkdir -p ~/.fhir/packages/et.fhir.core#0.9.0 && echo $_)"
 dependencies:
   et.fhir.core: 0.9.0
+  # Derived demo IGs (built locally) so fixtures can target their profiles.
+  et.fhir.surveillance: 0.1.0
+  et.fhir.hiv: 0.1.0
 
 pages:
   index.md:

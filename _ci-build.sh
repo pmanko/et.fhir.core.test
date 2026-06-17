@@ -1,22 +1,15 @@
 #!/usr/bin/env bash
-# CI build: runs inside the hl7fhir/ig-publisher-base container.
-# The IG Publisher invokes SUSHI itself, and SUSHI resolves dependencies from
-# ~/.fhir/packages *in this container* — so seed the (unpublished) et.fhir.core
-# dev build there before building. The publisher fetches the rest (r4.core and
-# et.fhir.core's transitive deps) from the registry.
+# CI build inside hl7fhir/ig-publisher-base. Seeds the (unpublished) ET deps into
+# the FHIR package cache (SUSHI/publisher resolve from ~/.fhir), then builds.
 set -euo pipefail
+seed() { # id version url
+  local dir="$HOME/.fhir/packages/$1#$2"
+  echo "seeding $1#$2 from $3"
+  mkdir -p "$dir"; curl -fsSL "$3" | tar -xz -C "$dir"; test -f "$dir/package/package.json"
+}
+seed et.fhir.core 0.9.0 https://moh-ethiopia.github.io/ETBase/package.tgz
+seed et.fhir.surveillance 0.1.0 https://pmanko.github.io/et.fhir.surveillance/package.tgz
+seed et.fhir.hiv 0.1.0 https://pmanko.github.io/et.fhir.hiv/package.tgz
 
-ET_CORE_PKG_URL="https://moh-ethiopia.github.io/ETBase/package.tgz"
-ET_CORE_VERSION="0.9.0"
-
-dir="$HOME/.fhir/packages/et.fhir.core#${ET_CORE_VERSION}"
-echo "Seeding et.fhir.core#${ET_CORE_VERSION} from ${ET_CORE_PKG_URL}"
-mkdir -p "$dir"
-curl -fsSL "$ET_CORE_PKG_URL" | tar -xz -C "$dir"
-test -f "$dir/package/package.json"
-
-echo "Fetching IG Publisher"
 curl -sSL https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar
-
-echo "Building IG"
 java -Xmx4g -jar publisher.jar publisher -ig .
