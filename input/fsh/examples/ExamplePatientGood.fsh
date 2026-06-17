@@ -26,6 +26,6 @@ Description: "A Patient that conforms to the Ethiopia base Patient profile (ETPa
 * maritalStatus = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus#M "Married"
 
 * extension[EducationStatusExtension].valueCodeableConcept = http://fhir.et/core/CodeSystem/education-status-cs#secondary "Secondary school"
-* extension[Occupation].valueCodeableConcept = http://fhir.et/core/CodeSystem/occupation-cs#emp "Employeed"
+* extension[Occupation].valueCodeableConcept = http://fhir.et/core/CodeSystem/occupation#emp "Employed"
 
 * telecom[email].value = "Challa.kebede@example.com"
