@@ -1,0 +1,6 @@
+{
+  "resourceType": "MedicationStatement",
+  "meta": { "profile": ["http://fhir.et/hiv/StructureDefinition/hiv-medication-statement"] },
+  "medicationCodeableConcept": { "text": "ART" },
+  "subject": { "reference": "Patient/ExampleHIVPatientGood" }
+}

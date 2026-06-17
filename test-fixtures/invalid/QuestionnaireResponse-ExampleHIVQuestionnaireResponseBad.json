@@ -1,0 +1,6 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "meta": { "profile": ["http://fhir.et/hiv/StructureDefinition/hiv-questionnaire-response"] },
+  "status": "completed",
+  "subject": { "reference": "Patient/ExampleHIVPatientGood" }
+}
