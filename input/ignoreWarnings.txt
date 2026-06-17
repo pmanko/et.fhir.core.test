@@ -1,5 +1,24 @@
-# IG Publisher QA suppressions.
-# ExamplePatientBad is intentionally non-conformant (it is a negative test
-# fixture), so validation errors/warnings against it are expected and not a
-# problem with this IG.
 == Suppressed Messages ==
+
+# This IG ships intentionally non-conformant "Bad" fixtures (negative tests).
+# Their validation errors are expected — they prove the profiles reject bad data —
+# so they are suppressed here to keep the IG build clean. Each entry below is an
+# expected error from a *Bad fixture, paired with a justification line.
+
+None of the codings provided are in the value set 'Ethiopian Patient Marital Status values' (http://fhir.et/core/ValueSet/marital-status-vs|0.9.0), and a coding from this value set is required) (codes = http://example.org/not-a-real-system#BOGUS)
+ExamplePatientBad: deliberately invalid marital status (negative test).
+
+Unable to validate code http://example.org/not-a-real-system#BOGUS - No codes in ValueSet belong to CodeSystem with URL http://example.org/not-a-real-system
+ExamplePatientBad: deliberately unknown code system (negative test).
+
+CodeSystem is unknown and can't be validated: http://example.org/not-a-real-system for 'http://example.org/not-a-real-system#BOGUS'
+ExamplePatientBad: deliberately unknown code system (negative test).
+
+Patient.identifier:artNumber.value: minimum required = 1, but only found 0 (from http://fhir.et/hiv/StructureDefinition/HIVPatient|0.1.0)
+ExampleHIVPatientBad: missing the required ART number value (negative test).
+
+MedicationDispense.status: minimum required = 1, but only found 0 (from http://fhir.et/hiv/StructureDefinition/hiv-medication-dispense|0.1.0)
+ExampleHIVMedicationDispenseBad: missing required status (negative test).
+
+MedicationDispense.quantity: minimum required = 1, but only found 0 (from http://fhir.et/hiv/StructureDefinition/hiv-medication-dispense|0.1.0)
+ExampleHIVMedicationDispenseBad: missing required quantity (negative test).
