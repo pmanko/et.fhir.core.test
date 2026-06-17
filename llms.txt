@@ -1,0 +1,20 @@
+# et.fhir.core.test#0.1.0: Ethiopia Core IG Conformance Test Fixtures
+
+## Pages
+
+* [Overview](index.md)
+* [Artifacts Summary](artifacts.md)
+
+## Resources
+
+### ImplementationGuides
+
+* [Ethiopia Core IG Conformance Test Fixtures](index.md)
+
+### Examples
+
+* [ExampleHIVMedicationDispenseGood (MedicationDispense)](MedicationDispense-ExampleHIVMedicationDispenseGood.md)
+* [ExampleHIVMedicationStatementGood (MedicationStatement)](MedicationStatement-ExampleHIVMedicationStatementGood.md)
+* [ExampleHIVPatientGood (Patient)](Patient-ExampleHIVPatientGood.md)
+* [ExamplePatientGood (Patient)](Patient-ExamplePatientGood.md)
+* [ExampleHIVQuestionnaireResponseGood (QuestionnaireResponse)](QuestionnaireResponse-ExampleHIVQuestionnaireResponseGood.md)

@@ -1,0 +1,7 @@
+[{
+  "id" : "et.fhir.core.test",
+  "type" : "ImplementationGuide",
+  "url" : "http://fhir.et/core/test/ImplementationGuide/et.fhir.core.test",
+  "version" : "0.1.0",
+  "name" : "ETCoreTest"
+}]

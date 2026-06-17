@@ -1,0 +1,41 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.et/core/test/MedicationStatement/ExampleHIVMedicationStatementGood> a fhir:MedicationStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleHIVMedicationStatementGood"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.et/hiv/StructureDefinition/hiv-medication-statement"^^xsd:anyURI ;
+       fhir:link <http://fhir.et/hiv/StructureDefinition/hiv-medication-statement>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement ExampleHIVMedicationStatementGood</b></p><a name=\"ExampleHIVMedicationStatementGood\"> </a><a name=\"hcExampleHIVMedicationStatementGood\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"file:///github/workspace/output/StructureDefinition-hiv-medication-statement.html\">HIV ART Medication Statement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:{http://fhir.et/hiv/CodeSystem/arv-regimen-cs 1d}\">AZT-3TC-EFV</span></p><p><b>subject</b>: <a href=\"Patient-ExampleHIVPatientGood.html\">Challa  Male, DoB Unknown ( http://ethiori.moh.gov.et/hiv/art-number#ART-G-1)</a></p><p><b>effective</b>: 2026-01-01</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:medication [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://fhir.et/hiv/CodeSystem/arv-regimen-cs"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "1d" ] ;
+       fhir:display [ fhir:v "AZT-3TC-EFV" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://fhir.et/core/test/Patient/ExampleHIVPatientGood> ;
+     fhir:reference [ fhir:v "Patient/ExampleHIVPatientGood" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2026-01-01"^^xsd:date
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

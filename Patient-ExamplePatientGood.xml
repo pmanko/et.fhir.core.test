@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="ExamplePatientGood"/>
+  <meta>
+    <profile value="http://fhir.et/core/StructureDefinition/ETPatient"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Patient ExamplePatientGood</b></p><a name="ExamplePatientGood"> </a><a name="hcExamplePatientGood"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="https://build.fhir.org/ig/[org]/[repo]/StructureDefinition-ETPatient.html">Ethiopian patient profile</a></p></div><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Abebe null  Male, DoB: 2019-08-15 ( http://id.gov.et/nationalidentifier#ET-987654321)</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Known Marital status of Patient">Marital Status:</td><td colspan="3"><span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-MaritalStatus M}">Married</span></td></tr><tr><td style="background-color: #f3f5da" title="Other Id (see the one above)">Other Id:</td><td colspan="3"><code>http://moh.gov.et/emr</code>/MRN-123456</td></tr><tr><td style="background-color: #f3f5da" title="Ways to contact the Patient">Contact Detail</td><td colspan="3"><ul><li><a href="mailto:Challa.kebede@example.com">Challa.kebede@example.com</a></li><li>Near Atlas Hotel AA </li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Extension to record the educational status of the patient"><a href="https://build.fhir.org/ig/[org]/[repo]/StructureDefinition-education-status-extension.html">Educational Status</a></td><td colspan="3"><span title="Codes:{http://fhir.et/core/CodeSystem/education-status-cs secondary}">Secondary school</span></td></tr><tr><td style="background-color: #f3f5da" title="Extension to record the occupation of the patient"><a href="https://build.fhir.org/ig/[org]/[repo]/StructureDefinition-occupation.html">Occupation Extension</a></td><td colspan="3"><span title="Codes:{http://fhir.et/core/CodeSystem/occupation emp}">Employed</span></td></tr></table></div>
+  </text>
+  <extension url="http://fhir.et/core/StructureDefinition/education-status-extension">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.et/core/CodeSystem/education-status-cs"/>
+        <code value="secondary"/>
+        <display value="Secondary school"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://fhir.et/core/StructureDefinition/occupation">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.et/core/CodeSystem/occupation"/>
+        <code value="emp"/>
+        <display value="Employed"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <identifier>
+    <system value="http://id.gov.et/nationalidentifier"/>
+    <value value="ET-987654321"/>
+  </identifier>
+  <identifier>
+    <system value="http://moh.gov.et/emr"/>
+    <value value="MRN-123456"/>
+  </identifier>
+  <name>
+    <family>
+      <extension url="http://hl7.org/fhir/StructureDefinition/humanname-fathers-family">
+        <valueString value="Challa"/>
+      </extension>
+      <extension url="http://fhir.et/core/StructureDefinition/grandfathers-family-name">
+        <valueString value="Mohammed"/>
+      </extension>
+    </family>
+    <given value="Abebe"/>
+  </name>
+  <telecom>
+    <system value="email"/>
+    <value value="Challa.kebede@example.com"/>
+  </telecom>
+  <gender value="male"/>
+  <birthDate value="2019-08-15">
+    <extension url="http://fhir.et/core/StructureDefinition/dob-estimated">
+      <valueBoolean value="false"/>
+    </extension>
+  </birthDate>
+  <address>
+    <extension url="http://fhir.et/core/StructureDefinition/address-zone">
+      <valueString value="Bole Subcity"/>
+    </extension>
+    <extension url="http://fhir.et/core/StructureDefinition/address-kebele">
+      <valueString value="Kebele 03"/>
+    </extension>
+    <extension url="http://fhir.et/core/StructureDefinition/address-ketenagott">
+      <valueString value="Ketena 12"/>
+    </extension>
+    <line value="Near Atlas Hotel"/>
+    <district value="Woreda 5"/>
+    <state value="AA"/>
+  </address>
+  <maritalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"/>
+      <code value="M"/>
+      <display value="Married"/>
+    </coding>
+  </maritalStatus>
+</Patient>

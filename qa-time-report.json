@@ -1,0 +1,242 @@
+{
+  "date" : "Wed, 17 Jun, 2026 11:05:11 +0000",
+  "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
+  "files" : [{
+    "name" : "/fsh-generated/resources/ImplementationGuide-et.fhir.core.test.json",
+    "size" : 3355,
+    "processes" : [{
+      "activity" : "load",
+      "start" : 107,
+      "length" : 19
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 114,
+      "length" : 12
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 114,
+      "length" : 71
+    },
+    {
+      "activity" : "validate",
+      "start" : 115,
+      "length" : 4975
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 120,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 121,
+      "length" : 66
+    },
+    {
+      "activity" : "generate2",
+      "start" : 122,
+      "length" : 80
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 139,
+      "length" : 4
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 172,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/MedicationDispense-ExampleHIVMedicationDispenseGood.json",
+    "size" : 500,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 107,
+      "length" : 4
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 114,
+      "length" : 1235
+    },
+    {
+      "activity" : "validate",
+      "start" : 120,
+      "length" : 28
+    },
+    {
+      "activity" : "generate1",
+      "start" : 121,
+      "length" : 6
+    },
+    {
+      "activity" : "generate2",
+      "start" : 122,
+      "length" : 14
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/MedicationStatement-ExampleHIVMedicationStatementGood.json",
+    "size" : 526,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 107,
+      "length" : 2
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 115,
+      "length" : 3
+    },
+    {
+      "activity" : "validate",
+      "start" : 120,
+      "length" : 15
+    },
+    {
+      "activity" : "generate1",
+      "start" : 121,
+      "length" : 5
+    },
+    {
+      "activity" : "generate2",
+      "start" : 123,
+      "length" : 9
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/Patient-ExampleHIVPatientGood.json",
+    "size" : 640,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 107,
+      "length" : 3
+    },
+    {
+      "activity" : "load-configure",
+      "start" : 114,
+      "length" : 3
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 115,
+      "length" : 44
+    },
+    {
+      "activity" : "validate",
+      "start" : 120,
+      "length" : 20
+    },
+    {
+      "activity" : "generate1",
+      "start" : 121,
+      "length" : 7
+    },
+    {
+      "activity" : "generate2",
+      "start" : 123,
+      "length" : 10
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/Patient-ExamplePatientGood.json",
+    "size" : 2526,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 107,
+      "length" : 4
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 114,
+      "length" : 1
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 115,
+      "length" : 2
+    },
+    {
+      "activity" : "validate",
+      "start" : 120,
+      "length" : 89
+    },
+    {
+      "activity" : "generate1",
+      "start" : 121,
+      "length" : 11
+    },
+    {
+      "activity" : "generate2",
+      "start" : 123,
+      "length" : 9
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/QuestionnaireResponse-ExampleHIVQuestionnaireResponseGood.json",
+    "size" : 410,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 107,
+      "length" : 2
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 115,
+      "length" : 37
+    },
+    {
+      "activity" : "validate",
+      "start" : 120,
+      "length" : 208
+    },
+    {
+      "activity" : "generate1",
+      "start" : 121,
+      "length" : 17
+    },
+    {
+      "activity" : "generate2",
+      "start" : 123,
+      "length" : 10
+    }]
+  },
+  {
+    "name" : "/fsh-generated/includes/menu.xml",
+    "size" : 1043,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 123,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/fsh-generated/includes/fsh-link-references.md",
+    "size" : 404
+  },
+  {
+    "name" : "/input/pagecontent/index.md",
+    "size" : 815
+  },
+  {
+    "name" : "/template/config",
+    "size" : 0
+  },
+  {
+    "name" : "/template/config/_config.yml",
+    "size" : 140
+  },
+  {
+    "name" : "/temp/pages/_includes/artifacts.xml",
+    "size" : 3047,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 123,
+      "length" : 1
+    }]
+  }]
+}

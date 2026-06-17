@@ -1,0 +1,116 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.et/core/test/Patient/ExamplePatientGood> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExamplePatientGood"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.et/core/StructureDefinition/ETPatient"^^xsd:anyURI ;
+       fhir:link <http://fhir.et/core/StructureDefinition/ETPatient>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient ExamplePatientGood</b></p><a name=\"ExamplePatientGood\"> </a><a name=\"hcExamplePatientGood\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://build.fhir.org/ig/[org]/[repo]/StructureDefinition-ETPatient.html\">Ethiopian patient profile</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Abebe null  Male, DoB: 2019-08-15 ( http://id.gov.et/nationalidentifier#ET-987654321)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Known Marital status of Patient\">Marital Status:</td><td colspan=\"3\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-MaritalStatus M}\">Married</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\"><code>http://moh.gov.et/emr</code>/MRN-123456</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li><a href=\"mailto:Challa.kebede@example.com\">Challa.kebede@example.com</a></li><li>Near Atlas Hotel AA </li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Extension to record the educational status of the patient\"><a href=\"https://build.fhir.org/ig/[org]/[repo]/StructureDefinition-education-status-extension.html\">Educational Status</a></td><td colspan=\"3\"><span title=\"Codes:{http://fhir.et/core/CodeSystem/education-status-cs secondary}\">Secondary school</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Extension to record the occupation of the patient\"><a href=\"https://build.fhir.org/ig/[org]/[repo]/StructureDefinition-occupation.html\">Occupation Extension</a></td><td colspan=\"3\"><span title=\"Codes:{http://fhir.et/core/CodeSystem/occupation emp}\">Employed</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://fhir.et/core/StructureDefinition/education-status-extension"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://fhir.et/core/CodeSystem/education-status-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "secondary" ] ;
+         fhir:display [ fhir:v "Secondary school" ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "http://fhir.et/core/StructureDefinition/occupation"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://fhir.et/core/CodeSystem/occupation"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "emp" ] ;
+         fhir:display [ fhir:v "Employed" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://id.gov.et/nationalidentifier"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ET-987654321" ]
+  ] [
+     fhir:system [ fhir:v "http://moh.gov.et/emr"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "MRN-123456" ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:family [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/humanname-fathers-family"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Challa"
+         ]
+       ] [
+         fhir:url [ fhir:v "http://fhir.et/core/StructureDefinition/grandfathers-family-name"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Mohammed"
+         ]
+       ] )
+     ] ;
+     fhir:given ( [ fhir:v "Abebe" ] )
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "email" ] ;
+     fhir:value [ fhir:v "Challa.kebede@example.com" ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [
+     fhir:v "2019-08-15"^^xsd:date ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://fhir.et/core/StructureDefinition/dob-estimated"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] )
+  ] ; # 
+  fhir:address ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://fhir.et/core/StructureDefinition/address-zone"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Bole Subcity"
+       ]
+     ] [
+       fhir:url [ fhir:v "http://fhir.et/core/StructureDefinition/address-kebele"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Kebele 03"
+       ]
+     ] [
+       fhir:url [ fhir:v "http://fhir.et/core/StructureDefinition/address-ketenagott"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Ketena 12"
+       ]
+     ] ) ;
+     fhir:line ( [ fhir:v "Near Atlas Hotel" ] ) ;
+     fhir:district [ fhir:v "Woreda 5" ] ;
+     fhir:state [ fhir:v "AA" ]
+  ] ) ; # 
+  fhir:maritalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "M" ] ;
+       fhir:display [ fhir:v "Married" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

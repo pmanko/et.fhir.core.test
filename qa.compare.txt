@@ -1,0 +1,40 @@
+ETCoreTest : Validation Results
+=========================================
+
+err = 0, warn = 14, info = 5
+$--
+Generated $--. FHIR version $-- for et.fhir.core.test#$-- (canonical = http://fhir.et/core/test)
+ Build Errors : 0 / 7 / 0
+ /github/workspace/fsh-generated/resources/ImplementationGuide-et.fhir.core.test : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/MedicationDispense-ExampleHIVMedicationDispenseGood : 0 / 1 / 2
+ /github/workspace/fsh-generated/resources/MedicationStatement-ExampleHIVMedicationStatementGood : 0 / 0 / 3
+ /github/workspace/fsh-generated/resources/Patient-ExampleHIVPatientGood : 0 / 2 / 2
+ /github/workspace/fsh-generated/resources/Patient-ExamplePatientGood : 0 / 2 / 1
+ /github/workspace/fsh-generated/resources/QuestionnaireResponse-ExampleHIVQuestionnaireResponseGood : 0 / 2 / 2
+</table>
+== n/a ==
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationDispense/ExampleHIVMedicationDispenseGood.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationStatement/ExampleHIVMedicationStatementGood.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource QuestionnaireResponse/ExampleHIVQuestionnaireResponseGood.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
+WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
+== fsh-generated/resources/ImplementationGuide-et.fhir.core.test.json ==
+== fsh-generated/resources/MedicationDispense-ExampleHIVMedicationDispenseGood.json ==
+INFORMATION: MedicationDispense/ExampleHIVMedicationDispenseGood: MedicationDispense.text.div: Hyperlink scheme 'file' in 'file:///github/workspace/output/StructureDefinition-hiv-medication-dispense.html' at 'div/div/p/a' for 'HIV ART Medication Dispense' is not a widely supported protocol and should be checked
+WARNING: MedicationDispense/ExampleHIVMedicationDispenseGood: MedicationDispense.quantity: UCUM Codes that contain human readable annotations like {tablet} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+== fsh-generated/resources/MedicationStatement-ExampleHIVMedicationStatementGood.json ==
+INFORMATION: MedicationStatement/ExampleHIVMedicationStatementGood: MedicationStatement.text.div: Hyperlink scheme 'file' in 'file:///github/workspace/output/StructureDefinition-hiv-medication-statement.html' at 'div/div/p/a' for 'HIV ART Medication Statement' is not a widely supported protocol and should be checked
+INFORMATION: MedicationStatement/ExampleHIVMedicationStatementGood: MedicationStatement.medication.ofType(CodeableConcept): Reference to draft CodeSystem http://fhir.et/hiv/CodeSystem/arv-regimen-cs|0.1.0
+== fsh-generated/resources/Patient-ExampleHIVPatientGood.json ==
+INFORMATION: Patient/ExampleHIVPatientGood: Patient.text.div: Hyperlink scheme 'file' in 'file:///github/workspace/output/StructureDefinition-HIVPatient.html' at 'div/div/p/a' for 'HIV Program Patient' is not a widely supported protocol and should be checked
+WARNING: Patient/ExampleHIVPatientGood: Patient.identifier[0].system: No definition could be found for URL value 'http://ethiori.moh.gov.et/hiv/art-number'
+WARNING: Patient/ExampleHIVPatientGood: Patient.identifier[1].system: No definition could be found for URL value 'http://id.gov.et/nationalidentifier'
+== fsh-generated/resources/Patient-ExamplePatientGood.json ==
+WARNING: Patient/ExamplePatientGood: Patient.identifier[0].system: No definition could be found for URL value 'http://id.gov.et/nationalidentifier'
+WARNING: Patient/ExamplePatientGood: Patient.identifier[1].system: No definition could be found for URL value 'http://moh.gov.et/emr'
+== fsh-generated/resources/QuestionnaireResponse-ExampleHIVQuestionnaireResponseGood.json ==
+INFORMATION: QuestionnaireResponse/ExampleHIVQuestionnaireResponseGood: QuestionnaireResponse.text.div: Hyperlink scheme 'file' in 'file:///github/workspace/output/StructureDefinition-hiv-questionnaire-response.html' at 'div/div/p/a' for 'HIV Program QuestionnaireResponse' is not a widely supported protocol and should be checked
+WARNING: QuestionnaireResponse/ExampleHIVQuestionnaireResponseGood: QuestionnaireResponse.questionnaire: A definition could not be found for Canonical URL 'http://fhir.et/hiv/Questionnaire/art-eligibility'
+WARNING: QuestionnaireResponse/ExampleHIVQuestionnaireResponseGood: QuestionnaireResponse: The questionnaire 'http://fhir.et/hiv/Questionnaire/art-eligibility' could not be resolved, so no validation can be performed against the base questionnaire

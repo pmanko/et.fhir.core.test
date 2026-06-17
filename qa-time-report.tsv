@@ -1,0 +1,13 @@
+Source File	Size	loadResources	load	generateSnapshots	load-configure	scan	loadDepInfo	loadInfo	checkR4R4B	generateNarratives	validate	loadLists	checkConformanceResources	checkConformanceResources2	checkConformanceResources3	generateLogicalMaps	validateExpressions	scanForUsageStats	checkURLsUnique	processProvenanceDetails	generate1	generate2	generateLogicals	makeDependencies	generateExampleZip	generateValidationPack	scanProfilesForR5	scanExamplesForR5
+/fsh-generated/resources/ImplementationGuide-et.fhir.core.test.json	3355	-	0	0	0	0	0	0	12	71	0	0	0	0	1	0	0	0	0	0	66	80	0	0	0	4	0	2
+fsh-generated/resources/MedicationDispense-ExampleHIVMedicationDispenseGood.json	500	4	0	0	0	0	0	0	0	1235	0	0	0	0	0	0	0	0	0	0	6	14	0	0	0	0	0	0
+fsh-generated/resources/MedicationStatement-ExampleHIVMedicationStatementGood.json	526	2	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	5	9	0	0	0	0	0	0
+fsh-generated/resources/Patient-ExampleHIVPatientGood.json	640	3	0	0	3	0	0	0	0	44	0	0	0	0	0	0	0	0	0	0	7	10	0	0	0	0	0	0
+fsh-generated/resources/Patient-ExamplePatientGood.json	2526	4	0	0	0	0	0	0	1	2	0	0	0	0	0	0	0	0	0	0	11	9	0	0	0	0	0	0
+fsh-generated/resources/QuestionnaireResponse-ExampleHIVQuestionnaireResponseGood.json	410	2	0	0	0	0	0	0	0	37	0	0	0	0	0	0	0	0	0	0	17	10	0	0	0	0	0	0
+/fsh-generated/includes/menu.xml	1043	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+/fsh-generated/includes/fsh-link-references.md	404	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/input/pagecontent/index.md	815	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/template/config	0	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/template/config/_config.yml	140	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/temp/pages/_includes/artifacts.xml	3047	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	1	0	0	0	0	0	0

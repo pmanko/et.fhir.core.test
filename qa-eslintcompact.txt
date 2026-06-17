@@ -1,0 +1,25 @@
+ETCoreTest
+=========================================
+
+Generic: line 0, col 0, Warning - Unable to find ImplementationGuide.definition.resource.description for the resource MedicationDispense/ExampleHIVMedicationDispenseGood.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list. (INVARIANT)
+Generic: line 0, col 0, Warning - Unable to find ImplementationGuide.definition.resource.description for the resource MedicationStatement/ExampleHIVMedicationStatementGood.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list. (INVARIANT)
+Generic: line 0, col 0, Warning - Unable to find ImplementationGuide.definition.resource.description for the resource QuestionnaireResponse/ExampleHIVQuestionnaireResponseGood.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list. (INVARIANT)
+Generic: line 0, col 0, Warning - The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide (NOTFOUND)
+Generic: line 0, col 0, Warning - An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide (NOTFOUND)
+Generic: line 0, col 0, Warning - An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml] is not included anywhere in the produced implementation guide (NOTFOUND)
+Generic: line 0, col 0, Warning - The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide (NOTFOUND)
+/github/workspace/fsh-generated/resources/MedicationDispense-ExampleHIVMedicationDispenseGood.json: line 0, col 0, Info - Hyperlink scheme 'file' in 'file:///github/workspace/output/StructureDefinition-hiv-medication-dispense.html' at 'div/div/p/a' for 'HIV ART Medication Dispense' is not a widely supported protocol and should be checked (INVALID)
+/github/workspace/fsh-generated/resources/MedicationDispense-ExampleHIVMedicationDispenseGood.json: line 13, col 4, Warning - UCUM Codes that contain human readable annotations like {tablet} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/MedicationStatement-ExampleHIVMedicationStatementGood.json: line 0, col 0, Info - Hyperlink scheme 'file' in 'file:///github/workspace/output/StructureDefinition-hiv-medication-statement.html' at 'div/div/p/a' for 'HIV ART Medication Statement' is not a widely supported protocol and should be checked (INVALID)
+/github/workspace/fsh-generated/resources/MedicationStatement-ExampleHIVMedicationStatementGood.json: line 10, col 4, Info - Reference to draft CodeSystem http://fhir.et/hiv/CodeSystem/arv-regimen-cs|0.1.0 (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/Patient-ExampleHIVPatientGood.json: line 0, col 0, Info - Hyperlink scheme 'file' in 'file:///github/workspace/output/StructureDefinition-HIVPatient.html' at 'div/div/p/a' for 'HIV Program Patient' is not a widely supported protocol and should be checked (INVALID)
+/github/workspace/fsh-generated/resources/Patient-ExampleHIVPatientGood.json: line 11, col 59, Warning - No definition could be found for URL value 'http://ethiori.moh.gov.et/hiv/art-number' (INVALID)
+/github/workspace/fsh-generated/resources/Patient-ExampleHIVPatientGood.json: line 15, col 54, Warning - No definition could be found for URL value 'http://id.gov.et/nationalidentifier' (INVALID)
+/github/workspace/fsh-generated/resources/Patient-ExamplePatientGood.json: line 11, col 54, Warning - No definition could be found for URL value 'http://id.gov.et/nationalidentifier' (INVALID)
+/github/workspace/fsh-generated/resources/Patient-ExamplePatientGood.json: line 15, col 40, Warning - No definition could be found for URL value 'http://moh.gov.et/emr' (INVALID)
+/github/workspace/fsh-generated/resources/QuestionnaireResponse-ExampleHIVQuestionnaireResponseGood.json: line 0, col 0, Info - Hyperlink scheme 'file' in 'file:///github/workspace/output/StructureDefinition-hiv-questionnaire-response.html' at 'div/div/p/a' for 'HIV Program QuestionnaireResponse' is not a widely supported protocol and should be checked (INVALID)
+/github/workspace/fsh-generated/resources/QuestionnaireResponse-ExampleHIVQuestionnaireResponseGood.json: line 10, col 70, Warning - A definition could not be found for Canonical URL 'http://fhir.et/hiv/Questionnaire/art-eligibility' (INVALID)
+/github/workspace/fsh-generated/resources/QuestionnaireResponse-ExampleHIVQuestionnaireResponseGood.json: line 10, col 70, Warning - The questionnaire 'http://fhir.et/hiv/Questionnaire/art-eligibility' could not be resolved, so no validation can be performed against the base questionnaire (REQUIRED)
+
+err = 0, warn = 14, info = 5
+IG Publisher Version: 2.2.9

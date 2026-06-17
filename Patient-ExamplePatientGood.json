@@ -1,0 +1,88 @@
+{
+  "resourceType" : "Patient",
+  "id" : "ExamplePatientGood",
+  "meta" : {
+    "profile" : ["http://fhir.et/core/StructureDefinition/ETPatient"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient ExamplePatientGood</b></p><a name=\"ExamplePatientGood\"> </a><a name=\"hcExamplePatientGood\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://build.fhir.org/ig/[org]/[repo]/StructureDefinition-ETPatient.html\">Ethiopian patient profile</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Abebe null  Male, DoB: 2019-08-15 ( http://id.gov.et/nationalidentifier#ET-987654321)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Known Marital status of Patient\">Marital Status:</td><td colspan=\"3\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-MaritalStatus M}\">Married</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\"><code>http://moh.gov.et/emr</code>/MRN-123456</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li><a href=\"mailto:Challa.kebede@example.com\">Challa.kebede@example.com</a></li><li>Near Atlas Hotel AA </li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Extension to record the educational status of the patient\"><a href=\"https://build.fhir.org/ig/[org]/[repo]/StructureDefinition-education-status-extension.html\">Educational Status</a></td><td colspan=\"3\"><span title=\"Codes:{http://fhir.et/core/CodeSystem/education-status-cs secondary}\">Secondary school</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Extension to record the occupation of the patient\"><a href=\"https://build.fhir.org/ig/[org]/[repo]/StructureDefinition-occupation.html\">Occupation Extension</a></td><td colspan=\"3\"><span title=\"Codes:{http://fhir.et/core/CodeSystem/occupation emp}\">Employed</span></td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://fhir.et/core/StructureDefinition/education-status-extension",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://fhir.et/core/CodeSystem/education-status-cs",
+        "code" : "secondary",
+        "display" : "Secondary school"
+      }]
+    }
+  },
+  {
+    "url" : "http://fhir.et/core/StructureDefinition/occupation",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://fhir.et/core/CodeSystem/occupation",
+        "code" : "emp",
+        "display" : "Employed"
+      }]
+    }
+  }],
+  "identifier" : [{
+    "system" : "http://id.gov.et/nationalidentifier",
+    "value" : "ET-987654321"
+  },
+  {
+    "system" : "http://moh.gov.et/emr",
+    "value" : "MRN-123456"
+  }],
+  "name" : [{
+    "_family" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/humanname-fathers-family",
+        "valueString" : "Challa"
+      },
+      {
+        "url" : "http://fhir.et/core/StructureDefinition/grandfathers-family-name",
+        "valueString" : "Mohammed"
+      }]
+    },
+    "given" : ["Abebe"]
+  }],
+  "telecom" : [{
+    "system" : "email",
+    "value" : "Challa.kebede@example.com"
+  }],
+  "gender" : "male",
+  "birthDate" : "2019-08-15",
+  "_birthDate" : {
+    "extension" : [{
+      "url" : "http://fhir.et/core/StructureDefinition/dob-estimated",
+      "valueBoolean" : false
+    }]
+  },
+  "address" : [{
+    "extension" : [{
+      "url" : "http://fhir.et/core/StructureDefinition/address-zone",
+      "valueString" : "Bole Subcity"
+    },
+    {
+      "url" : "http://fhir.et/core/StructureDefinition/address-kebele",
+      "valueString" : "Kebele 03"
+    },
+    {
+      "url" : "http://fhir.et/core/StructureDefinition/address-ketenagott",
+      "valueString" : "Ketena 12"
+    }],
+    "line" : ["Near Atlas Hotel"],
+    "district" : "Woreda 5",
+    "state" : "AA"
+  }],
+  "maritalStatus" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+      "code" : "M",
+      "display" : "Married"
+    }]
+  }
+}
